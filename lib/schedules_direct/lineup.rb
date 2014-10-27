@@ -10,4 +10,12 @@ class SchedulesDirect::Lineup
     @type = p[:type]
     @location = p[:location]
   end
+
+  def ==(other)
+    other.class == self.class and
+      other.name == @name and
+      other.uri == @uri and
+      other.type == @type and
+      other.location == @location
+  end
 end
